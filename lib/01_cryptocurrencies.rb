@@ -20,5 +20,8 @@ my_hash_f = Hash[my_hash.map { |k,v| [k, v.to_f ]}]
 #puts my_hash_f.find_all{|k,v| v < 6000}
 
 #La devise la plus chère parmi celles dont le cours est inférieur à 6000.    
-#my_hash_inf = my_hash_f.select{|k,v| v < 6000}
+my_hash_inf = my_hash_f.select{|k,v| v < 6000}
 #puts my_hash_inf.key(my_hash_inf.values.max)
+#puts my_hash_inf["Russian Miner..."]
+smaller =  [my_hash_inf.max_by{|k,v| v}].to_h
+puts smaller
